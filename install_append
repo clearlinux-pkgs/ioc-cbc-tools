@@ -1,6 +1,6 @@
 mkdir -p %{buildroot}/usr/lib/systemd/system/multi-user.target.wants
-ln -s ../u_cbc_attach.service %{buildroot}/usr/lib/systemd/system/multi-user.target.wants/u_cbc_attach.service
-ln -s ../u_cbc_lifecycle.service %{buildroot}/usr/lib/systemd/system/multi-user.target.wants/u_cbc_lifecycle.service
+ln -s ../cbc_attach.service %{buildroot}/usr/lib/systemd/system/multi-user.target.wants/cbc_attach.service
+ln -s ../cbc_lifecycle.service %{buildroot}/usr/lib/systemd/system/multi-user.target.wants/cbc_lifecycle.service
 mkdir -p %{buildroot}/usr/share/clr-service-restart
-ln -sf /usr/lib/systemd/system/u_cbc_attach.service %{buildroot}/usr/share/clr-service-restart/u_cbc_attach.service
-ln -sf /usr/lib/systemd/system/u_cbc_lifecycle.service %{buildroot}/usr/share/clr-service-restart/u_cbc_lifecycle.service
+ln -sf /usr/lib/systemd/system/cbc_attach.service %{buildroot}/usr/share/clr-service-restart/cbc_attach.service
+ln -sf /usr/lib/systemd/system/cbc_lifecycle.service %{buildroot}/usr/share/clr-service-restart/cbc_lifecycle.service
