@@ -4,7 +4,7 @@
 #
 Name     : ioc-cbc-tools
 Version  : 2019ww09.5
-Release  : 24
+Release  : 25
 URL      : https://github.com/intel/ioc-cbc-tools/archive/2019ww09.5.tar.gz
 Source0  : https://github.com/intel/ioc-cbc-tools/archive/2019ww09.5.tar.gz
 Summary  : No detailed summary available
