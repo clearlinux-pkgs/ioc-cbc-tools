@@ -1,0 +1,29 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Miguel Bernal Marin <miguel.bernal.marin@linux.intel.com>
+Date: Fri, 5 Jul 2019 00:42:49 -0500
+Subject: [PATCH] makefile: add /usr/include/acrn to CFLAGS
+
+As acrn_mngr.h is including new includes and they are stored in
+/usr/include/acrn, then let's add this path to CFLAGS.
+
+Signed-off-by: Miguel Bernal Marin <miguel.bernal.marin@linux.intel.com>
+---
+ cbc_lifecycle/Makefile | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/cbc_lifecycle/Makefile b/cbc_lifecycle/Makefile
+index a536ae0..47ba7a4 100644
+--- a/cbc_lifecycle/Makefile
++++ b/cbc_lifecycle/Makefile
+@@ -1,6 +1,8 @@
+ 
+ OUT_DIR ?= .
+ 
++CFLAGS += -I/usr/include/acrn
++
+ $(OUT_DIR)/cbc_lifecycle: cbc_lifecycle.c
+ 	gcc -o $@ $(CFLAGS) $(LDFLAGS) cbc_lifecycle.c -pthread -lacrn-mngr
+ 
+-- 
+https://clearlinux.org
+
