@@ -4,10 +4,10 @@
 #
 Name     : ioc-cbc-tools
 Version  : 2019ww27.1
-Release  : 27
+Release  : 28
 URL      : https://github.com/intel/ioc-cbc-tools/archive/2019ww27.1.tar.gz
 Source0  : https://github.com/intel/ioc-cbc-tools/archive/2019ww27.1.tar.gz
-Summary  : No detailed summary available
+Summary  : IO Controller for automotive system using Carrier Board Communiction protocol
 Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: ioc-cbc-tools-autostart = %{version}-%{release}
@@ -20,6 +20,7 @@ BuildRequires : acrn-hypervisor-dev
 BuildRequires : acrn-hypervisor-staticdev
 BuildRequires : dlt-daemon-dev
 BuildRequires : pkgconfig(fuse)
+BuildRequires : zlib-dev
 Patch1: 0001-makefile-add-usr-include-acrn-to-CFLAGS.patch
 
 %description
@@ -79,7 +80,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562306188
+export SOURCE_DATE_EPOCH=1568238792
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -89,7 +90,7 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1562306188
+export SOURCE_DATE_EPOCH=1568238792
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ioc-cbc-tools
 cp LICENSE %{buildroot}/usr/share/package-licenses/ioc-cbc-tools/LICENSE
