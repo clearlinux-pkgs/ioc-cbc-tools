@@ -4,7 +4,7 @@
 #
 Name     : ioc-cbc-tools
 Version  : 2019ww27.1
-Release  : 28
+Release  : 29
 URL      : https://github.com/intel/ioc-cbc-tools/archive/2019ww27.1.tar.gz
 Source0  : https://github.com/intel/ioc-cbc-tools/archive/2019ww27.1.tar.gz
 Summary  : IO Controller for automotive system using Carrier Board Communiction protocol
