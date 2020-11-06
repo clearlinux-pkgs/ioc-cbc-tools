@@ -4,7 +4,7 @@
 #
 Name     : ioc-cbc-tools
 Version  : 2019ww27.1
-Release  : 29
+Release  : 30
 URL      : https://github.com/intel/ioc-cbc-tools/archive/2019ww27.1.tar.gz
 Source0  : https://github.com/intel/ioc-cbc-tools/archive/2019ww27.1.tar.gz
 Summary  : IO Controller for automotive system using Carrier Board Communiction protocol
@@ -73,6 +73,7 @@ services components for the ioc-cbc-tools package.
 
 %prep
 %setup -q -n ioc-cbc-tools-2019ww27.1
+cd %{_builddir}/ioc-cbc-tools-2019ww27.1
 %patch1 -p1
 
 %build
@@ -80,20 +81,20 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568238792
+export SOURCE_DATE_EPOCH=1604706325
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1568238792
+export SOURCE_DATE_EPOCH=1604706325
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ioc-cbc-tools
-cp LICENSE %{buildroot}/usr/share/package-licenses/ioc-cbc-tools/LICENSE
+cp %{_builddir}/ioc-cbc-tools-2019ww27.1/LICENSE %{buildroot}/usr/share/package-licenses/ioc-cbc-tools/54e8792438404ad76eb51bbf50bc01f9b8d3c887
 %make_install
 ## install_append content
 mkdir -p %{buildroot}/usr/lib/systemd/system/multi-user.target.wants
@@ -136,7 +137,7 @@ ln -sf /usr/lib/systemd/system/cbc_thermald.service %{buildroot}/usr/share/clr-s
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/ioc-cbc-tools/LICENSE
+/usr/share/package-licenses/ioc-cbc-tools/54e8792438404ad76eb51bbf50bc01f9b8d3c887
 
 %files services
 %defattr(-,root,root,-)
